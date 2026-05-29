@@ -1,0 +1,56 @@
+{
+  "name": "@shapeshift-labs/frontier-sandbox",
+  "version": "0.1.0",
+  "description": "Runtime-agnostic sandbox contracts for Frontier patch-producing actions.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/siliconjungle/-shapeshift-labs-frontier-sandbox.git"
+  },
+  "homepage": "https://github.com/siliconjungle/-shapeshift-labs-frontier-sandbox#readme",
+  "bugs": {
+    "url": "https://github.com/siliconjungle/-shapeshift-labs-frontier-sandbox/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "benchmarks/*.mjs",
+    "scripts/*.mjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc -p test/tsconfig.json --noEmit",
+    "test": "npm run build && npm run typecheck && node scripts/with-frontier-sandbox-lock.mjs -- node test/smoke.mjs",
+    "bench": "npm run build && node scripts/with-frontier-sandbox-lock.mjs -- node benchmarks/sandbox-bench.mjs --out benchmarks/results/frontier-sandbox-bench-latest.json",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "frontier",
+    "sandbox",
+    "patch",
+    "capabilities"
+  ],
+  "peerDependencies": {
+    "@shapeshift-labs/frontier": ">=0.1.8 <1"
+  },
+  "devDependencies": {
+    "@shapeshift-labs/frontier": "file:../json-diff/packages/frontier",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "frontier.sandbox.benchmark",
+  "version": 1,
+  "generatedAt": "2026-05-29T06:34:49.934Z",
+  "node": "v26.1.0",
+  "rows": [
+    {
+      "name": "source.diff.64-actions",
+      "iterations": 5000,
+      "totalMs": 596.0316660000001,
+      "usPerOp": 119.20633320000002
+    },
+    {
+      "name": "source.replay.8-upserts",
+      "iterations": 2000,
+      "totalMs": 408.8220420000001,
+      "usPerOp": 204.41102100000006
+    },
+    {
+      "name": "local.invoke.patch",
+      "iterations": 20000,
+      "totalMs": 24.549334000000044,
+      "usPerOp": 1.2274667000000024
+    }
+  ]
+}
