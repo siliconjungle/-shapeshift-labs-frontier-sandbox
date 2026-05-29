@@ -47,10 +47,10 @@
     "capabilities"
   ],
   "peerDependencies": {
-    "@shapeshift-labs/frontier": ">=0.1.8 <1"
+    "@shapeshift-labs/frontier": "0.1.9"
   },
   "devDependencies": {
-    "@shapeshift-labs/frontier": "file:../json-diff/packages/frontier",
+    "@shapeshift-labs/frontier": "0.1.9",
     "typescript": "^6.0.3"
   }
 }
